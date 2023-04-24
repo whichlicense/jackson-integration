@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
     api("com.whichlicense:identity:0.1.3-SNAPSHOT")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.15.0-rc3")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
