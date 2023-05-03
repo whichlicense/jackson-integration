@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.whichlicense.jackson"
-version = "0.1.6-SNAPSHOT"
+version = "0.2.0-SNAPSHOT"
 
 java {
     toolchain {
@@ -29,13 +29,13 @@ repositories {
 }
 
 dependencies {
-    api("com.whichlicense:identity:0.1.6-SNAPSHOT")
+    api("com.whichlicense:identity:0.2.0-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.1.6-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:naming:0.2.0-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
