@@ -10,12 +10,12 @@ plugins {
     id("signing")
 }
 
-group = "com.whichlicense.jackson"
-version = "0.2.0-SNAPSHOT"
+group = "com.whichlicense"
+version = "0.7.6-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
     withJavadocJar()
     withSourcesJar()
@@ -29,13 +29,13 @@ repositories {
 }
 
 dependencies {
-    api("com.whichlicense:identity:0.2.0-SNAPSHOT")
+    api("com.whichlicense:identity:0.7.6-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.3.0-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:naming:0.7.6-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
@@ -50,8 +50,8 @@ tasks.getByName<Test>("test") {
 
 publishing {
     publications {
-        create<MavenPublication>("identity") {
-            artifactId = "identity"
+        create<MavenPublication>("jackson-identity-integration") {
+            artifactId = "jackson-identity-integration"
             from(components["java"])
             versionMapping {
                 usage("java-api") {
@@ -113,7 +113,7 @@ signing {
         val signingKey = System.getenv("PKG_SIGNING_KEY")
         val signingPassword = System.getenv("PKG_SIGNING_PW")
         useInMemoryPgpKeys(signingKey, signingPassword)
-        sign(publishing.publications["identity"])
+        sign(publishing.publications["jackson-identity-integration"])
     }
 }
 
