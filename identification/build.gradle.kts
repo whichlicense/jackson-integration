@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    api("com.whichlicense:identity:0.7.6-SNAPSHOT")
+    implementation("com.whichlicense:identification:0.8.0-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
@@ -50,8 +50,8 @@ tasks.getByName<Test>("test") {
 
 publishing {
     publications {
-        create<MavenPublication>("jackson-identity-integration") {
-            artifactId = "jackson-identity-integration"
+        create<MavenPublication>("jackson-identification-integration") {
+            artifactId = "jackson-identification-integration"
             from(components["java"])
             versionMapping {
                 usage("java-api") {
@@ -62,9 +62,9 @@ publishing {
                 }
             }
             pom {
-                name.set("WhichLicense jackson-integration/identity")
-                description.set("This library provides a SimpleModule for identity conversion using jackson.")
-                url.set("https://github.com/whichlicense/jackson-integration/identity")
+                name.set("WhichLicense jackson-integration/identification")
+                description.set("This library provides a SimpleModule for identification conversion using jackson.")
+                url.set("https://github.com/whichlicense/jackson-integration/identification")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -113,7 +113,7 @@ signing {
         val signingKey = System.getenv("PKG_SIGNING_KEY")
         val signingPassword = System.getenv("PKG_SIGNING_PW")
         useInMemoryPgpKeys(signingKey, signingPassword)
-        sign(publishing.publications["jackson-identity-integration"])
+        sign(publishing.publications["jackson-identification-integration"])
     }
 }
 

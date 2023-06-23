@@ -4,9 +4,11 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-open module whichlicense.integration.jackson.identity {
-    requires transitive whichlicense.identity;
+
+open module whichlicense.integration.jackson.identification {
+    requires whichlicense.identification.license;
     requires transitive com.fasterxml.jackson.core;
     requires transitive com.fasterxml.jackson.databind;
-    exports com.whichlicense.integration.jackson.identity;
+    exports com.whichlicense.integration.jackson.identification;
+    exports com.whichlicense.integration.jackson.identification.pipeline;
 }
