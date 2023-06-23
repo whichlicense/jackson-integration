@@ -28,6 +28,10 @@ repositories {
     mavenCentral()
 }
 
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(10, "minutes")
+}
+
 dependencies {
     api("com.whichlicense:identity:0.7.6-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.2")
