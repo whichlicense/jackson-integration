@@ -21,7 +21,7 @@ jobs:
   publish:
     strategy:
       matrix:
-        directory: [ identity ]
+        directory: [ identity, identification ]
     uses: whichlicense/.github/.github/workflows/maven-publishing.yml@main
     with:
       root-directory: ${{ matrix.directory }}
